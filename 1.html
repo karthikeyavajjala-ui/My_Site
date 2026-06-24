@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio | V.Karthikeya- Computer Science</title>
+    <meta name="description" content="Comprehensive student portfolio showcasing academic projects, skills, achievements, and coursework with academic timeline." />
+    <style>
+        :root {
+            --primary: #1e40af;
+            --primary-light: #3b82f6;
+            --primary-dark: #1e3a8a;
+            --secondary: #7c3aed;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --border: #334155;
+            --text: #f1f5f9;
+            --text-muted: #cbd5e1;
+            --radius: 12px;
+            --shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, var(--bg) 0%, #1a2332 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.2) 0%, rgba(124, 58, 237, 0.15) 100%);
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .hero-meta {
+            display: grid;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .meta-item {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .meta-label {
+            color: var(--primary-light);
+            font-weight: 600;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-light);
+            border: 2px solid var(--primary-light);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .hero-image {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(124, 58, 237, 0.2));
+            border-radius: var(--radius);
+            padding: 2rem;
+            display: grid;
+            place-items: center;
+            min-height: 300px;
+            border: 1px solid var(--border);
+        }
+
+        .profile-badge {
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-light);
+            color: var(--text);
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(124, 58, 237, 0.1));
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-light);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(124, 58, 237, 0.15));
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(124, 58, 237, 0.1));
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-light);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.15), rgba(124, 58, 237, 0.15));
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .project-date,
+        .project-deadline {
+            color: var(--text-muted);
+        }
+
+        .deadline-badge {
+            display: inline-block;
+            background: var(--danger);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .deadline-badge.upcoming {
+            background: var(--warning);
+        }
+
+        .deadline-badge.completed {
+            background: var(--success);
+        }
+
+        .project-description {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--primary-light);
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(59, 130, 246, 0.4);
+        }
+
+        .project-grade {
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .grade-label {
+            color: var(--text-muted);
+        }
+
+        .grade-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--success);
+        }
+
+        /* Courses Section */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .course-card {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.1));
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.2);
+        }
+
+        .course-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.75rem;
+        }
+
+        .course-code {
+            background: rgba(6, 182, 212, 0.2);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .course-credit {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .course-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .course-info {
+            display: grid;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .course-deadline {
+            background: rgba(245, 158, 11, 0.1);
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--warning);
+            border-left: 3px solid var(--warning);
+        }
+
+        .course-status {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.75rem;
+        }
+
+        .status-ongoing {
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--primary-light);
+        }
+
+        .status-completed {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(59, 130, 246, 0.1));
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+        }
+
+        .skill-category-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-item {
+            background: rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(59, 130, 246, 0.5);
+            color: var(--primary-light);
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary-light), var(--secondary));
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            margin-left: 60px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(124, 58, 237, 0.05));
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            border-color: var(--primary-light);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(124, 58, 237, 0.1));
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 1.75rem;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            border: 4px solid var(--bg);
+        }
+
+        .timeline-date {
+            color: var(--primary-light);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-description {
+            color: var(--text-muted);
+        }
+
+        /* GPA Section */
+        .gpa-container {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(6, 182, 212, 0.15));
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .gpa-header {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .gpa-item {
+            text-align: center;
+        }
+
+        .gpa-title {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gpa-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--success);
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-title {
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-description {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Deadlines Table */
+        .deadlines-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .deadlines-table thead {
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .deadlines-table th {
+            padding: 1rem;
+            text-align: left;
+            color: var(--primary-light);
+            font-weight: 700;
+            border: 1px solid var(--border);
+        }
+
+        .deadlines-table td {
+            padding: 1rem;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+        }
+
+        .deadline-row {
+            background: rgba(59, 130, 246, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .deadline-row:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .deadline-status {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-pending {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--danger);
+        }
+
+        .status-inprogress {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--warning);
+        }
+
+        .status-completed-task {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.15), rgba(124, 58, 237, 0.15));
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .contact-label {
+            color: var(--primary-light);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .contact-value {
+            color: var(--text);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .contact-value:hover {
+            color: var(--primary-light);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .projects-grid,
+            .courses-grid,
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .gpa-header {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item {
+                margin-left: 40px;
+            }
+
+            .timeline-item::before {
+                left: -5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .gpa-header {
+                grid-template-columns: 1fr;
+            }
+
+            .deadlines-table {
+                font-size: 0.85rem;
+            }
+
+            .deadlines-table th,
+            .deadlines-table td {
+                padding: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">📚 StudentPort</a>
+                <nav>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#deadlines">Deadlines</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>V.Karthikeya</h1>
+                    <p>Computer Science Branch| Data Science Student | AI Enthusiast</p>
+                    <div class="hero-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">University:</span>
+                            <span>Joy University</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Year:</span>
+                            <span>Senior (2nd Year)</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">GPA:</span>
+                            <span>yet to be updated</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Major:</span>
+                            <span>Computer Science with AI Concentration</span>
+                        </div>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-badge"><img src="profile.jpg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">
+                I am a motivated B.Tech Computer Science Engineering student at Joy University, specializing in Artificial Intelligence and Data Science, with a strong passion for applying technology to solve real-world problems. I am particularly interested in Artificial Intelligence, Machine Learning, and Data Analytics, and how intelligent systems can drive innovation and improve decision-making.   
+                Through my academic journey, I have developed a solid foundation in C programming, problem-solving, which has strengthened my analytical thinking and technical understanding. I enjoy working with data, exploring patterns, and transforming information into meaningful insights that support practical solutions.   
+                I am continuously learning and improving my skills by exploring new technologies, working on projects, and gaining hands-on experience that bridges the gap between theoretical knowledge and real-world applications. I believe in continuous growth, adaptability, and staying updated with emerging trends in AI and data science.   
+                My goal is to grow as an AI professional and contribute to building innovative, scalable, and impactful technology solutions. I am actively seeking opportunities such as internships, collaborative projects, and learning experiences that allow me to apply my skills while expanding my knowledge.   
+                I am always open to connecting with like-minded professionals, mentors, and innovators who share an interest in technology and innovation.
+            </p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Academic Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Programming Languages</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">yet to be updated</div>
+                    <div class="stat-label">Current GPA</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Research Paper</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-title">Academic Projects</h2>
+            <p class="section-subtitle">A selection of my major coursework and personal projects developed throughout my studies.</p>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">Exploring Machine Learning </h3>
+                            <div class="project-meta">
+                                <span class="project-date">📅 Started: Sept 2025</span>
+                                <span class="project-deadline">⏰ Deadline: Dec 15, 2025</span>
+                                <span class="deadline-badge completed">✓ Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Developed a comprehensive machine learning classifier using Python and scikit-learn.Featured data 
+                        preprocessing, feature engineering, and model optimization techniques.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Data Science</span>
+                        <span class="tag">scikit-learn</span>
+                    </div>
+                    <div class="project-grade">
+                        <span class="grade-label">Final Grade:</span>
+                        <span class="grade-value">A (92/100)</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">Students Attendance Tracker</h3>
+                            <div class="project-meta">
+                                <span class="project-date">📅 Started: Jan 2025</span>
+                                <span class="project-deadline">⏰ Deadline: May 20, 2025</span>
+                                <span class="deadline-badge completed">✓ Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        A Student Attendance Tracker is a digital solution or application used by educational institutions to automate the recording, monitoring, and reporting of student daily presence and absence. It replaces traditional paper-based registers with a centralized platform to improve administrative accuracy, eliminate proxy entries, and analyze participation trends.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">Stripe API</span>
+                    </div>
+                    <div class="project-grade">
+                        <span class="grade-label">Final Grade:</span>
+                        <span class="grade-value">B (85/100)</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">Mobile App Development</h3>
+                            <div class="project-meta">
+                                <span class="project-date">📅 Started: Oct 2025</span>
+                                <span class="project-deadline">⏰ Deadline: Feb 30, 2026</span>
+                                <span class="deadline-badge completed">✓ Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Cross-platform mobile application using React Native and Firebase. Features include real-time notifications, 
+                        cloud data synchronization, and offline support. Published on both iOS and Android platforms with 4.8★ rating. 
+                        Implemented push notifications and analytics tracking.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">React Native</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">Mobile Dev</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                    <div class="project-grade">
+                        <span class="grade-label">Final Grade:</span>
+                        <span class="grade-value">B (85/100)</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">Database Management System</h3>
+                            <div class="project-meta">
+                                <span class="project-date">📅 Started: June 2024</span>
+                                <span class="project-deadline">⏰ Deadline: Sept 25, 2024</span>
+                                <span class="deadline-badge completed">✓ Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Designed and implemented a relational database system handling complex queries and transactions. 
+                        Optimized query performance with proper indexing and normalization. Conducted extensive testing with 
+                        concurrent operations and handled ACID properties effectively.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Database Design</span>
+                        <span class="tag">Optimization</span>
+                    </div>
+                    <div class="project-grade">
+                        <span class="grade-label">Final Grade:</span>
+                        <span class="grade-value">A (97/100)</span>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">Network Security Protocol</h3>
+                            <div class="project-meta">
+                                <span class="project-date">📅 Started: May 2024</span>
+                                <span class="project-deadline">⏰ Deadline: Aug 15, 2024</span>
+                                <span class="deadline-badge completed">✓ Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Implemented custom network security protocol using C++ and socket programming. Features include 
+                        encryption, authentication, and error detection. Tested against various attack vectors and 
+                        vulnerability assessments. Achieved 100% packet integrity verification.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">Networking</span>
+                        <span class="tag">Security</span>
+                        <span class="tag">Encryption</span>
+                    </div>
+                    <div class="project-grade">
+                        <span class="grade-label">Final Grade:</span>
+                        <span class="grade-value">A+ (99/100)</span>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">AI Chatbot System</h3>
+                            <div class="project-meta">
+                                <span class="project-date">📅 Started: April 2024</span>
+                                <span class="project-deadline">⏰ Deadline: July 10, 2024</span>
+                                <span class="deadline-badge upcoming">⏳ In Progress</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Building an advanced AI chatbot using natural language processing and deep learning. Implementing 
+                        transformer models with attention mechanisms. Integration with multiple APIs for real-time information 
+                        retrieval. Currently achieving 89% response accuracy.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">Deep Learning</span>
+                        <span class="tag">TensorFlow</span>
+                    </div>
+                    <div class="project-grade">
+                        <span class="grade-label">Progress:</span>
+                        <span class="grade-value">85%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses">
+            <h2 class="section-title">Current & Completed Courses</h2>
+            <p class="section-subtitle">Relevant coursework demonstrating comprehensive computer science knowledge.</p>
+            <div class="courses-grid">
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <div>
+                            <div class="course-code">CS 401</div>
+                            <div class="course-title">Quantum Computing Summer Internship</div>
+                        </div>
+                        <div class="course-credit">1 Credit</div>
+                    </div>
+                    <div class="course-info">
+                        <div>Instructor: AP GOVERNMENT</div>
+                        <div>Semester: Fall 2025</div>
+                    </div>
+                    <div class="course-deadline">📌 Final Exam: December 20, 2025</div>
+                    <span class="course-status status-ongoing">Completed</span>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <div>
+                            <div class="course-code">CS 450</div>
+                            <div class="course-title">Data Analysis by Power BI</div>
+                        </div>
+                        <div class="course-credit">1 Credit</div>
+                    </div>
+                    <div class="course-info">
+                        <div>Instructor: Ashvin kumar</div>
+                        <div>Semester: Fall 2026</div>
+                    </div>
+                    <div class="course-deadline">📌 Project Due: January 15, 2026</div>
+                    <span class="course-status status-ongoing">Ongoing</span>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <div>
+                            <div class="course-code">CS 320</div>
+                            <div class="course-title">Prompt Engineering</div>
+                        </div>
+                        <div class="course-credit">only learnings </div>
+                    </div>
+                    <div class="course-info">
+                        <div>Instructor: Online</div>
+                        <div>Semester: Spring 2026</div>
+                    </div>
+                    <div class="course-deadline">📌 Completed: May 2026</div>
+                    <span class="course-status status-completed">Completed - A</span>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <div>
+                            <div class="course-code">CS 380</div>
+                            <div class="course-title">Environmental Science</div>
+                        </div>
+                        <div class="course-credit">1 Credit</div>
+                    </div>
+                    <div class="course-info">
+                        <div>Instructor: NPTEL</div>
+                        <div>Semester: Spring 2026</div>
+                    </div>
+                    <div class="course-deadline">📌 Completed: May 2026</div>
+                    <span class="course-status status-completed">Completed - A+</span>
+                </div>
+
+                <!-- Course 5 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <div>
+                            <div class="course-code">CS 405</div>
+                            <div class="course-title">Getting Started with Data </div>
+                        </div>
+                        <div class="course-credit">only learnings</div>
+                    </div>
+                    <div class="course-info">
+                        <div>Instructor: IBM</div>
+                        <div>Semester: Fall 2026</div>
+                    </div>
+                    <div class="course-deadline">📌 Completed: June 2026</div>
+                    <span class="course-status status-completed">Completed - A</span>
+                </div>
+
+                <!-- Course 6 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <div>
+                            <div class="course-code">CS 410</div>
+                            <div class="course-title">Artificial Intelligence</div>
+                        </div>
+                        <div class="course-credit">Only Learnings</div>
+                    </div>
+                    <div class="course-info">
+                        <div>Instructor: Online</div>
+                        <div>Semester: Fall 2026</div>
+                    </div>
+                    <div class="course-deadline">📌 Completed: December 2026</div>
+                    <span class="course-status status-completed">Completed - A</span>
+                </div>
+
+                <!-- Course 7 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <div>
+                            <div class="course-code">MATH 301</div>
+                            <div class="course-title">Linear Algebra</div>
+                        </div>
+                        <div class="course-credit">Only Learnings</div>
+                    </div>
+                    <div class="course-info">
+                        <div>Instructor: Dr.Sathyavathi</div>
+                        <div>Semester: Spring 2026</div>
+                    </div>
+                    <div class="course-deadline">📌 Completed: May 2026</div>
+                    <span class="course-status status-completed">Completed - A</span>
+                </div>
+
+                <!-- Course 8 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <div>
+                            <div class="course-code">CS 350</div>
+                            <div class="course-title">Workshop</div>
+                        </div>
+                        <div class="course-credit">Only Experience</div>
+                    </div>
+                    <div class="course-info">
+                        <div>Instructor: Mercy Deepa</div>
+                        <div>Semester: Spring 2026</div>
+                    </div>
+                    <div class="course-deadline">📌 Completed: May 2026</div>
+                    <span class="course-status status-completed">Completed - A</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- GPA & Achievements Section -->
+        <section>
+            <h2 class="section-title">Academic Performance & Achievements</h2>
+            <div class="gpa-container">
+                <div class="gpa-header">
+                    <div class="gpa-item">
+                        <div class="gpa-title">Cumulative GPA</div>
+                        <div class="gpa-value">9.01</div>
+                    </div>
+                    <div class="gpa-item">
+                        <div class="gpa-title">Current Semester GPA</div>
+                        <div class="gpa-value">9.00</div>
+                    </div>
+                    <div class="gpa-item">
+                        <div class="gpa-title">Major GPA</div>
+                        <div class="gpa-value">9.00</div>
+                    </div>
+                    <div class="gpa-item">
+                        <div class="gpa-title">Overall Rank</div>
+                        <div class="gpa-value">Top 25%</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="section-title" style="margin-top: 2rem;">Awards & Honors</h3>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">🏆</div>
+                    <div class="achievement-title">Dean's List</div>
+                    <div class="achievement-description">
+                        Recognized for academic excellence for 7 consecutive semesters. Awarded to top 5% of students by GPA.
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">🥇</div>
+                    <div class="achievement-title">Programming Competition</div>
+                    <div class="achievement-description">
+                        One of the Best Place in University Programming Competition 2024.
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">📄</div>
+                    <div class="achievement-title">Published Research</div>
+                    <div class="achievement-description">
+                        Sub paper on Machine Learning Optimization published in class of Computer Science.
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">🎓</div>
+                    <div class="achievement-title">Scholarship Recipient</div>
+                    <div class="achievement-description">
+                        Merit-based scholarship for excellence in computer science. Renewable annually based on performance.
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">💼</div>
+                    <div class="achievement-title">Internship Excellence</div>
+                    <div class="achievement-description">
+                        Completed successful internship at Tansum as Data analytics Engineer Intern. Return offer received.
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">🔬</div>
+                    <div class="achievement-title">Research Assistant</div>
+                    <div class="achievement-description">
+                        Research Assistant in AI Lab. Contributing to ongoing projects in deep learning and NLP.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title">Technical Skills & Expertise</h2>
+            <p class="section-subtitle">Comprehensive technical proficiency developed through coursework and practical projects.</p>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <div class="skill-category-title">Programming Languages</div>
+                    <div class="skill-list">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">C </span>
+                        <span class="skill-item">SQL</span>
+                        <span class="skill-item">HTML/CSS</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">Frontend Development</div>
+                    <div class="skill-list">
+                        <span class="skill-item">React</span>
+                        <span class="skill-item">TypeScript</span>
+                        <span class="skill-item">Webpack</span>
+                        <span class="skill-item">Next.js</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">Backend Development</div>
+                    <div class="skill-list">
+                        <span class="skill-item">Node.js</span>
+                        <span class="skill-item">Django</span>
+                        <span class="skill-item">Flask</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">Databases</div>
+                    <div class="skill-list">
+                        <span class="skill-item">PostgreSQL</span>
+                        <span class="skill-item">MongoDB</span>
+                        <span class="skill-item">Firebase</span>
+                        <span class="skill-item">MySQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">AI & Machine Learning</div>
+                    <div class="skill-list">
+                        <span class="skill-item">TensorFlow</span>
+                        <span class="skill-item">PyTorch</span>
+                        <span class="skill-item">scikit-learn</span>
+                        <span class="skill-item">Data Analysis</span>
+                        <span class="skill-item">Pandas/NumPy</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">Tools & Platforms</div>
+                    <div class="skill-list">
+                        <span class="skill-item">Git/GitHub</span>
+                        <span class="skill-item">Linux</span>
+                        <span class="skill-item">VS Code</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section>
+            <h2 class="section-title">Academic Journey Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">September 2025</div>
+                    <div class="timeline-title">Started Computer Science Program</div>
+                    <div class="timeline-description">
+                        Began my journey at Joy University, pursuing a degree in Computer Science with AI concentration. 
+                        Took introductory courses in programming and mathematics.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">May 2026</div>
+                    <div class="timeline-title">First Internship - Summer 2026</div>
+                    <div class="timeline-description">
+                        Completed internship as Junior Data Analyst at local tech startup, working on Power BI and Excel projects. 
+                        Contributed to data visualization and reporting initiatives.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">December 2022</div>
+                    <div class="timeline-title">Made Class List (First Time)</div>
+                    <div class="timeline-description">
+                        Achieved 9.01 GPA in freshman year, earning recognition on Class. Focused on core CS courses 
+                        and developed strong foundation in problem solving and data structures.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">June 2026</div>
+                    <div class="timeline-title">Quantum Summer Internship</div>
+                    <div class="timeline-description">
+                        Worked as Quantum Computing Research Intern at local quantum tech company. Contributed to research on quantum algorithms and error correction.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">October 2026</div>
+                    <div class="timeline-title">Published First Research Paper</div>
+                    <div class="timeline-description">
+                        Co-authored paper on "What is Quantum Machine Learning" published in College Journal. 
+                        Research focused on improving training efficiency.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">March 2026</div>
+                    <div class="timeline-title">Won Programming Competition</div>
+                    <div class="timeline-description">
+                        Placed as a member in Annual University Programming Competition. Solved algorithmic problems in various categories 
+                        including graph theory.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">December 2024</div>
+                    <div class="timeline-title">Current Status - Senior 2nd Year</div>
+                    <div class="timeline-description">
+                        Currently in 3rd semester with 9 cumulative GPA. Taking advanced electives and finalizing capstone project. 
+                        Set to graduate in May 2029.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deadlines Table Section -->
+        <section id="deadlines">
+            <h2 class="section-title">Upcoming Deadlines</h2>
+            <p class="section-subtitle">Important dates and submission deadlines for current coursework and projects.</p>
+            <table class="deadlines-table">
+                <thead>
+                    <tr>
+                        <th>Task/Assignment</th>
+                        <th>Course</th>
+                        <th>Deadline</th>
+                        <th>Status</th>
+                        <th>Priority</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="deadline-row">
+                        <td>Algorithm Analysis Project</td>
+                        <td>CS 401</td>
+                        <td>Dec 22, 2026</td>
+                        <td><span class="deadline-status status-pending">Pending</span></td>
+                        <td>🔴 High</td>
+                    </tr>
+                    <tr class="deadline-row">
+                        <td>Machine Learning Midterm Exam</td>
+                        <td>CS 450</td>
+                        <td>Dec 18, 2026</td>
+                        <td><span class="deadline-status status-inprogress">In Progress</span></td>
+                        <td>🔴 High</td>
+                    </tr>
+                    <tr class="deadline-row">
+                        <td>Capstone Project Proposal</td>
+                        <td>CS 499</td>
+                        <td>Jan 10, 2026</td>
+                        <td><span class="deadline-status status-pending">Pending</span></td>
+                        <td>🟠 Medium</td>
+                    </tr>
+                    <tr class="deadline-row">
+                        <td>Network Protocol Assignment</td>
+                        <td>CS 410</td>
+                        <td>Dec 25, 2026</td>
+                        <td><span class="deadline-status status-inprogress">In Progress</span></td>
+                        <td>🟠 Medium</td>
+                    </tr>
+                    <tr class="deadline-row">
+                        <td>Research Paper Final Draft</td>
+                        <td>CS 480</td>
+                        <td>Jan 15, 2026</td>
+                        <td><span class="deadline-status status-pending">Pending</span></td>
+                        <td>🟡 Low</td>
+                    </tr>
+                    <tr class="deadline-row">
+                        <td>Advanced Algorithms Final Project</td>
+                        <td>CS 401</td>
+                        <td>Jan 5, 2026</td>
+                        <td><span class="deadline-status status-pending">Pending</span></td>
+                        <td>🔴 High</td>
+                    </tr>
+                    <tr class="deadline-row">
+                        <td>Database Optimization Task</td>
+                        <td>CS 402</td>
+                        <td>Dec 20, 2026</td>
+                        <td><span class="deadline-status status-completed-task">Completed</span></td>
+                        <td>✅ Done</td>
+                    </tr>
+                    <tr class="deadline-row">
+                        <td>AI Lab Research Update</td>
+                        <td>Research</td>
+                        <td>Jan 8, 2026</td>
+                        <td><span class="deadline-status status-pending">Pending</span></td>
+                        <td>🟠 Medium</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Feel free to reach out for collaboration, internship opportunities, or any inquiries.</p>
+            <div class="contact-container">
+                <div class="contact-item">
+                    <div class="contact-label">📧 Email</div>
+                    <a href="mailto:karthikeyavajjala@gmail.com" class="contact-value">karthikeyavajjala@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">💼 LinkedIn</div>
+                    <a href="https://www.linkedin.com/in/karthikeya-v2412" class="contact-value">karthikeya-v2412</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">🐙 GitHub</div>
+                    <a href="https://github.com/karthikeyavajjala-ui" class="contact-value">karthikeya-ui</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">📱 Phone</div>
+                    <a href="tel:+917989787146" class="contact-value">+91 7989787146</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">📍 Location</div>
+                    <div class="contact-value">Joy University, Tiruvendrum City, Tamil Nadu State</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">🌐 Portfolio</div>
+                    <a href="https://karthikeyavajjala.github.io" class="contact-value">karthikeyavajjala.github.io</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Karthikeya Vajjala - Student Portfolio. All rights reserved.</p>
+        <p>Last updated: December 2025 | Next graduation: May 2029</p>
+    </footer>
+</body>
+</html>
